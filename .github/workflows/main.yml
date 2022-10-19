@@ -10,7 +10,7 @@ jobs:
   build:
     name: Build image
     env:
-      SERVICE_NAME: oms-api
+      SERVICE_NAME: sample-nginx
     runs-on: ubuntu-latest
     # strategy:
     #   matrix:
@@ -33,6 +33,7 @@ jobs:
         key: ${{ runner.os }}-buildx-${{ github.sha }}
         restore-keys: |
           ${{ runner.os }}-buildx-
+
     - name: stg AWS OIDC credential
       uses: aws-actions/configure-aws-credentials@v1
       with:
