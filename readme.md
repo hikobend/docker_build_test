@@ -1,3 +1,3 @@
 参考文献
  
-[[初心者向け] GitHub ActionsからECS FargateにCI/CDしてみた](https://dev.classmethod.jp/articles/githubactions-ecs-fargate-cicd-beginner/)
+[GitHub ActionsとECS CLIを使ったECSデプロイパイプラインの構築](https://practical-aws.dev/p/ecs-deploy-gh-actions/)

@@ -1,2 +1,1 @@
-FROM httpd:latest
-COPY ./html /usr/local/apache2/htdocs/
+FROM public.ecr.aws/docker/library/nginx:latest
