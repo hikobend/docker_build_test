@@ -3,8 +3,8 @@
 ####################################################
 
 resource "aws_iam_openid_connect_provider" "gh_actions" {
-  url = "https://token.actions.githubusercontent.com"
-  client_id_list = ["sts.amazonaws.com"]
+  url             = "https://token.actions.githubusercontent.com"
+  client_id_list  = ["sts.amazonaws.com"]
   thumbprint_list = ["a031c46782e6e6c662c2c87c76da9aa62ccabd8e"]
 }
 
@@ -21,7 +21,7 @@ resource "aws_iam_role" "gh_actions" {
         Action = "sts:AssumeRoleWithWebIdentity"
         Condition = {
           StringLike = {
-            "token.actions.githubusercontent.com:sub": "repo:${local.gh_org_name}/*:*"
+            "token.actions.githubusercontent.com:sub" : "repo:${local.gh_org_name}/*:*"
           }
         }
       }
@@ -69,12 +69,12 @@ resource "aws_iam_role" "gh_actions" {
           Resource = "*"
         },
         {
-          Effect = "Allow"
-          Action = "iam:PassRole"
+          Effect   = "Allow"
+          Action   = "iam:PassRole"
           Resource = "*"
           Condition = {
             StringLike = {
-              "iam:PassedToService": "ecs-tasks.amazonaws.com"
+              "iam:PassedToService" : "ecs-tasks.amazonaws.com"
             }
           }
         }
