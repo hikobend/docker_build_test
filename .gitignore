@@ -1,1 +1,6 @@
 .aws
+
+.terraform
+*.tfstate
+*.tfstate.*
+*.hcl
